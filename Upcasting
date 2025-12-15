@@ -1,0 +1,56 @@
+import java.util.Scanner;
+class PrimeNumber
+{
+    void number(int n)
+    {
+        int flag=0,i;
+        for(i=1;i<=n;i++)
+        {
+            if(n%i==0)
+            {
+                flag++;
+            }
+        }
+        if(flag==2)
+        {
+            System.out.println("prime");
+        }else{
+            System.out.println("Not prime:");
+        }
+    }
+    void display()
+    {
+        System.out.println("Primenumber method");
+    }
+}
+class EvenOrOdd extends PrimeNumber{
+    void number(int n)
+    {
+        if(n%2==0)
+        {
+            System.out.println("Even");
+        }else{
+            System.out.println("Odd");
+        }
+    }
+    void display()
+    {
+        System.out.println("Even or odd class is invoke");
+    }
+}
+public class Upcasting
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter a number:");
+        int n=sc.nextInt();
+        PrimeNumber pr=new EvenOrOdd();
+        pr.number(n);
+        pr.display();
+    }
+}
+// 1)it is a instance method
+// 2)it is a upcasting
+// 3)it is a overridden
+// noe i dis method of child class will be invoke(to call) by jvm
